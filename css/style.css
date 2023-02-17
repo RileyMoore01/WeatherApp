@@ -9,7 +9,8 @@ input {
 /* Classes */
 .location-textbox {
     border-radius: 25px;
-    max-width: calc(100vw - 300px);
+    max-width: calc(100vw - 50rem);
+    min-width: 200px;
     width: 100%;
     max-height: 50px;
     height: 100%;
@@ -19,6 +20,18 @@ input {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.submit-button {
+    border-radius: 25px;
+    max-width: 125px;
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color:aqua;
 }
 /* End Of Classes */
 
@@ -66,7 +79,7 @@ input {
   .rotating {
     position: absolute;
     top: 10%;
-    left: 46%;
+    left: 48%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 
