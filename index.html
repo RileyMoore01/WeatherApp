@@ -13,10 +13,12 @@
         style="width: 100px; height: 100px; line-height: 100px; text-align: center;"
         src="/images/sun.png" 
     />
-    <h3 id="enter-heading">Enter Location</h3>
-    <form action="" method="get">
-        <input id="zipcode" class="location-textbox input zipCode" type="text"/>
-        <input class="submit-button" type="button" value="Submit" onclick="getWeatherByZip(79401)"> 
-    </form>
+    <div id="input-page">
+        <h3 id="enter-heading">Enter Zip Code</h3>
+        <form action="" method="get">
+            <input maxlength="5" id="zipcode" class="location-textbox input zipCode" type="text"/>
+            <input class="submit-button" type="button" value="Submit" onclick="getWeatherByZip(79401)"> 
+        </form>
+    </div>
 </body>
 </html>
