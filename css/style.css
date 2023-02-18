@@ -21,21 +21,22 @@ input {
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-
-.submit-button {
-    border-radius: 25px;
-    max-width: 125px;
-    width: 100%;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    background-color:aqua;
-}
 /* End Of Classes */
 
 /* Id's */
+#submit-button {
+  border-radius: 25px;
+  max-width: 125px;
+  width: 100%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color:aqua;
+  transition: 1s ease-in-out;
+}
+ 
 #enter-heading {
     position: absolute;
     top: 30%;
@@ -45,11 +46,9 @@ input {
 
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 50px;
-}
-
-#input-page {
     transition: 1s ease-in-out;
 }
+
 /* End Of Id's */
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -86,10 +85,28 @@ input {
     left: 48%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    transition: 1s ease-in-out;
 
     -webkit-animation: rotating 2s linear infinite;
     -moz-animation: rotating 2s linear infinite;
     -ms-animation: rotating 2s linear infinite;
     -o-animation: rotating 2s linear infinite;
     animation: rotating 2s linear infinite;
+  }
+
+  /* --- Media Queries --- */
+  @media (max-width: 1250px) {
+    .rotating {
+      position: absolute;
+      top: 10%;
+      left: 45%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  
+      -webkit-animation: rotating 2s linear infinite;
+      -moz-animation: rotating 2s linear infinite;
+      -ms-animation: rotating 2s linear infinite;
+      -o-animation: rotating 2s linear infinite;
+      animation: rotating 2s linear infinite;
+    }
   }

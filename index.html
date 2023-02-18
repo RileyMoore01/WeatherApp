@@ -9,16 +9,44 @@
     <title>Document</title>
 </head>
 <body>
-    <img class="rotating" 
+    <img id="rotating" class="rotating" 
         style="width: 100px; height: 100px; line-height: 100px; text-align: center;"
         src="/images/sun.png" 
     />
     <div id="input-page">
         <h3 id="enter-heading">Enter Zip Code</h3>
         <form action="" method="get">
-            <input maxlength="5" id="zipcode" class="location-textbox input zipCode" type="text"/>
-            <input class="submit-button" type="button" value="Submit" onclick="getWeatherByZip(79401)"> 
+            <input maxlength="5" id="zipcode" class="location-textbox input" type="text" pattern="[0-9]{5}" title="Please enter a 5-digit zip code" required/>
+            <input id="submit-button" type="button" value="Submit" onclick="getWeatherByZip(79401)"> 
         </form>
     </div>
+
+    <!-- <label for="zipCode">Enter your zip code:</label>
+    <input type="text" id="zipCode" name="zipCode" pattern="[0-9]{5}" title="Please enter a 5-digit zip code" required>
+    <div id="zipCodeError" style="color: red;"></div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#zipCode').on('blur', function() {
+            var zipCode = $(this).val();
+            if (zipCode.length == 5 && $.isNumeric(zipCode)) {
+                $.getJSON('https://api.zippopotam.us/us/' + zipCode, function(data) {
+                if (data.places && data.places.length > 0) {
+                    // Valid zip code entered
+                    $('#zipCodeError').text('');
+                } else {
+                    // Invalid zip code entered
+                    $('#zipCodeError').text('Please enter a valid zip code');
+                }
+                });
+            } else {
+                // Invalid input format
+                $('#zipCodeError').text('Please enter a 5-digit zip code');
+            }
+            });
+        });
+
+    </script>
 </body>
 </html>
