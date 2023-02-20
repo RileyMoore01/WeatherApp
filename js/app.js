@@ -19,8 +19,10 @@ function moveIndexPage() {
     // Get the elements on the page
     var text = document.getElementById("input-page");
     var header = document.getElementById("enter-heading");
+    var result = document.getElementById("result-page");
 
     // Start animation on the properties
     text.style.transform = "translateX(200%)";
     header.style.transform = "translateX(1000px)";
+    result.style.display = "block";
 }
