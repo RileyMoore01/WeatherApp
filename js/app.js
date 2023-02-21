@@ -25,4 +25,5 @@ function moveIndexPage() {
     text.style.transform = "translateX(200%)";
     header.style.transform = "translateX(1000px)";
     result.style.display = "block";
+    result.style.transform = "translateX(100px)";
 }
